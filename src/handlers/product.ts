@@ -21,6 +21,25 @@ export const getProducts = async (req: Request, res: Response) => {
   }
 }
 
+export const getProductById = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id } = req.params;
+    const product = await Product.findByPk(id);
+
+    if (!product) {
+      res.status(404).json({
+        error: "Producto no encontrado",
+      });
+      return; // Asegúrate de terminar la ejecución después de enviar la respuesta
+    }
+
+    res.json({ data: product });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error al obtener el producto' });
+  }
+};
+
 export const createProduct = async (req: Request, res: Response) => {
   try {
     const product = await Product.create(req.body);

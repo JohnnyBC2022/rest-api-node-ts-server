@@ -13,7 +13,7 @@ class Product extends Model {
     @Column({
         type: DataType.FLOAT(6,2)
     })
-    declare price: number
+    declare price: number // no pasa nada por no poner declare, pero evitamos un warning
 
     @Default(true)
     @Column({

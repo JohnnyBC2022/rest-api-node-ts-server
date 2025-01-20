@@ -1,11 +1,17 @@
 import { Router } from "express"
-import { createProduct, getProducts } from "./handlers/product"
-import { handleInputErrors, validateProduct } from "./middleware"
+import { createProduct, getProductById, getProducts } from "./handlers/product"
+import { handleInputErrors, validateId, validateProduct } from "./middleware"
+import {param} from 'express-validator'
 
 const router = Router()
 
 //Routing
-router.get('/', getProducts
+router.get('/', getProducts)
+
+router.get('/:id',
+    validateId,
+    handleInputErrors,
+    getProductById
 )
 
 router.post('/',

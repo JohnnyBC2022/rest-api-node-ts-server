@@ -1,6 +1,6 @@
 import {Request, Response, NextFunction} from 'express'
 import { validationResult } from 'express-validator'
-import { body } from 'express-validator'
+import { body, param } from 'express-validator'
 
 export const handleInputErrors = (req: Request, res: Response, next: NextFunction): void => {
   const errors = validationResult(req);
@@ -12,7 +12,6 @@ export const handleInputErrors = (req: Request, res: Response, next: NextFunctio
 };
 
 
-
 export const validateProduct = [
   body('name').notEmpty().withMessage('El nombre del producto no puede estar vacío'),
   body('price')
@@ -20,4 +19,9 @@ export const validateProduct = [
     .notEmpty().withMessage('El precio no puede estar vacío')
     .custom((value) => value > 0).withMessage('El precio debe ser mayor que 0'),
 ];
+
+export const validateId = [
+
+param('id').isInt({ min: 1 }).withMessage('ID no válido'),
+]
 
