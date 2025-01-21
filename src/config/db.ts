@@ -14,7 +14,8 @@ const db = new Sequelize('process.env.DATABASE_URL',{
 }) */
 
 const db = new Sequelize(process.env.DATABASE_URL!, {
-    models: [__dirname + '/../models/**/*.ts']
-}) // El interrogante es para garantizar que esa variable existe
+    models: [__dirname + '/../models/**/*.ts'],
+    logging: false
+}) // El signo de exclamación es para garantizar que esa variable existe
 
 export default db
