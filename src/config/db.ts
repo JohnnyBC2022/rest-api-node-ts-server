@@ -13,7 +13,7 @@ const db = new Sequelize('process.env.DATABASE_URL',{
     }
 }) */
 
-const db = new Sequelize(process.env.DATABASE_URL!,{
+const db = new Sequelize(process.env.DATABASE_URL!, {
     models: [__dirname + '/../models/**/*.ts']
 }) // El interrogante es para garantizar que esa variable existe
 

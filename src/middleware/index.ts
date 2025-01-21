@@ -1,4 +1,4 @@
-import {Request, Response, NextFunction} from 'express'
+import { Request, Response, NextFunction } from 'express'
 import { validationResult } from 'express-validator'
 import { body, param } from 'express-validator'
 
@@ -22,8 +22,7 @@ export const validateProduct = [
 ];
 
 export const validateId = [
-
-param('id').isInt({ min: 1 }).withMessage('ID no válido'),
+  param('id').isInt({ min: 1 }).withMessage('ID no válido'),
 ]
 
 export const validateUpdatedProduct = [

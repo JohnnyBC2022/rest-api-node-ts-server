@@ -1,4 +1,4 @@
-import {Table, Column, Model, DataType, Default} from 'sequelize-typescript'
+import { Table, Column, Model, DataType, Default } from 'sequelize-typescript'
 
 @Table({
     tableName: 'products'
@@ -11,7 +11,7 @@ class Product extends Model {
     declare name: string
 
     @Column({
-        type: DataType.FLOAT(6,2)
+        type: DataType.FLOAT(6, 2)
     })
     declare price: number // no pasa nada por no poner declare, pero evitamos un warning
 
