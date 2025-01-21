@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { createProduct, getProductById, getProducts, updateProduct } from "./handlers/product"
+import { createProduct, getProductById, getProducts, updateAvailability, updateProduct } from "./handlers/product"
 import { handleInputErrors, validateId, validateProduct, validateUpdatedProduct } from "./middleware"
 import {param} from 'express-validator'
 
@@ -25,9 +25,9 @@ router.put('/:id',
     handleInputErrors,
     updateProduct)
 
-router.patch('/', (req, res) => {
-    res.json('Desde PATCH')
-})
+router.patch('/:id',
+    updateAvailability
+)
 
 router.delete('/', (req, res) => {
     res.json('Desde DELETE')
