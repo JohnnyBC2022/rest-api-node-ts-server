@@ -30,7 +30,7 @@ export const getProductById = async (req: Request, res: Response): Promise<void>
       res.status(404).json({
         error: "Producto no encontrado",
       });
-      return; // Asegúrate de terminar la ejecución después de enviar la respuesta
+      return;
     }
 
     res.json({ data: product });
@@ -50,3 +50,24 @@ export const createProduct = async (req: Request, res: Response) => {
   }
 };
 
+export const updateProduct = async (req: Request, res: Response): Promise<void> => {
+  const {id} = req.params
+  const product = await Product.findByPk(id)
+
+  if (!product) {
+    res.status(404).json({
+      error: "Producto no encontrado",
+    });
+    return;
+  }
+
+  // Actualizar
+  await product.update(req.body) //ojo que este update solo hace modificaciones parciales, es decir, solo actualiza lo que le pasemos en el body, también podemos hacer esto:
+  //product.name = req.body.name
+  //product.price = req.body.price
+  // product.availability = req.body.availability
+  // Recuerda que PUT hace modificaciones totales con lo que le estamos enviando
+  await product.save()
+
+  res.json({data: product})
+}
