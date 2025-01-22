@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1737573123109" clover="3.2.0">
-  <project timestamp="1737573123109" name="All files">
-    <metrics statements="100" coveredstatements="93" conditionals="5" coveredconditionals="5" methods="11" coveredmethods="11" elements="116" coveredelements="109" complexity="0" loc="100" ncloc="100" packages="5" files="6" classes="6"/>
+<coverage generated="1737574761550" clover="3.2.0">
+  <project timestamp="1737574761551" name="All files">
+    <metrics statements="101" coveredstatements="95" conditionals="5" coveredconditionals="5" methods="11" coveredmethods="11" elements="117" coveredelements="111" complexity="0" loc="101" ncloc="101" packages="5" files="6" classes="6"/>
     <package name="src">
-      <metrics statements="27" coveredstatements="26" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="28" coveredstatements="28" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="router.ts" path="C:\Users\cocoo\Documents\Curso de React y TypeScript\rest_api_node_ts_server\src\router.ts">
         <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
@@ -19,16 +19,17 @@
         <line num="41" count="2" type="stmt"/>
       </file>
       <file name="server.ts" path="C:\Users\cocoo\Documents\Curso de React y TypeScript\rest_api_node_ts_server\src\server.ts">
-        <metrics statements="16" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
         <line num="17" count="2" type="stmt"/>
         <line num="20" count="2" type="stmt"/>
         <line num="23" count="2" type="stmt"/>
@@ -127,12 +128,12 @@
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="Product.model.ts" path="C:\Users\cocoo\Documents\Curso de React y TypeScript\rest_api_node_ts_server\src\models\Product.model.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="25" count="2" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
       </file>
     </package>
   </project>
