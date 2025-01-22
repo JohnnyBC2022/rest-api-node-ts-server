@@ -17,7 +17,7 @@ if(process.argv[2] === '--clear') {
     clearDB()
 }
 
-console.log(process.argv)
+//console.log(process.argv)
 
 // Para no tener que estar haciendo npm run test (o npm test) y luego npm run db, continuamente, hay un script especial que se llama pretest que se ejecuta automáticamente antes de hacer los test. (Cambio db por pretest en el package.json)
 // También existe un script posttest que ejecuta un script después de finalizar los test

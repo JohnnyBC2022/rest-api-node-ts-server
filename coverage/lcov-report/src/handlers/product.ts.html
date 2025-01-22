@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.54% </span>
+                <span class="strong">89.09% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>41/55</span>
+                <span class='fraction'>49/55</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.42% </span>
+                <span class="strong">87.75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>35/49</span>
+                <span class='fraction'>43/49</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -245,22 +245,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -351,23 +351,23 @@ export const updateProduct = async (req: Request, res: Response): Promise&lt;voi
   res.json({ data: product })
 }
 &nbsp;
-export const updateAvailability = <span class="fstat-no" title="function not covered" >async </span>(req: Request, res: Response): Promise&lt;void&gt; =&gt; {
-  const { id } = <span class="cstat-no" title="statement not covered" >req.params</span>
-  const product = <span class="cstat-no" title="statement not covered" >await Product.findByPk(id)</span>
+export const updateAvailability = async (req: Request, res: Response): Promise&lt;void&gt; =&gt; {
+  const { id } = req.params
+  const product = await Product.findByPk(id)
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  <span class="missing-if-branch" title="if path not taken" >I</span>if (!product) {</span>
-<span class="cstat-no" title="statement not covered" >    res.status(404).json({</span>
+  if (!product) {
+    res.status(404).json({
       error: "Producto no encontrado",
     });
-<span class="cstat-no" title="statement not covered" >    return;</span>
+    return;
   }
 &nbsp;
   // Actualizar
-<span class="cstat-no" title="statement not covered" >  product.availability = !product.dataValues.availability</span>
+  product.availability = !product.dataValues.availability
   // Al hacer esto, le estamos diciendo que si la disponibilidad es true lo cambie a false y viceversa. Así nos evitamos enviar nada en el body
-<span class="cstat-no" title="statement not covered" >  await product.save()</span>
+  await product.save()
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  res.json({ data: product })</span>
+  res.json({ data: product })
 }
 &nbsp;
 export const deleteProduct = async (req: Request, res: Response): Promise&lt;void&gt; =&gt; {
@@ -391,7 +391,7 @@ export const deleteProduct = async (req: Request, res: Response): Promise&lt;voi
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-01-22T18:50:07.836Z
+                at 2025-01-22T19:12:03.072Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
