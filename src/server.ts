@@ -1,7 +1,7 @@
 import express from 'express'
 import colors from 'colors' // esto sirve para mostrar los mensajes de la consola con distintos colores
 import swaggerUi from 'swagger-ui-express'
-import swaggerSpec from './config/swagger'
+import swaggerSpec, {swaggerUiOptions} from './config/swagger'
 import router from './router'
 import db from './config/db'
 
@@ -27,6 +27,6 @@ server.use(express.json())
 server.use("/api/v1/products", router)
 
 // Docs
-server.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
+server.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, swaggerUiOptions))
 
 export default server
