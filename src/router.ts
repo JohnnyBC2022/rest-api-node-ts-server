@@ -42,7 +42,7 @@ const router = Router()
  *          description: Return a list of products
  *          responses:
  *              200:
- *                  description: Succesful response
+ *                  description: Succesfully response
  *                  content:
  *                      application/json:
  *                          schema:
@@ -69,7 +69,7 @@ router.get('/', getProducts)
  *                  type: integer
  *          responses:
  *              200:
- *                  description: Succesful Response
+ *                  description: Succesfully Response
  *                  content:
  *                      application/json:
  *                          schema:
@@ -105,10 +105,14 @@ router.get('/:id',
  *                                  example: "Teléfono móvil"
  *                              price:
  *                                  type: number
- *                                  example: "249.99"
+ *                                  example: 249.99
  *          responses:
  *              201:
- *                  description: Product created successfully
+ *                  description: Sucessfully response
+ *                  content:
+ *                      application/json:
+ *                          schema:
+ *                              $ref: '#/components/schemas/Product'
  *              400:
  *                  description: Bad Request - Invalid input data
  */
@@ -118,6 +122,49 @@ router.post('/',
     createProduct
 )
 
+/**
+ * @swagger
+ * /api/v1/products/{id}:
+ *      put:
+ *          summary: Updates a product with user input
+ *          tags:
+ *              - Products
+ *          description: Returns the updated product
+ *          parameters:
+ *            - in: path
+ *              name: id
+ *              description: The ID of the product to retrieve
+ *              required: true
+ *              schema:
+ *                  type: integer
+ *          requestBody:
+ *              required: true
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                          type: object
+ *                          properties:
+ *                              name:
+ *                                  type: string
+ *                                  example: "Teléfono móvil"
+ *                              price:
+ *                                  type: number
+ *                                  example: 249.99
+ *                              availability:
+ *                                  type: boolean
+ *                                  example: true
+ *          responses:
+ *              200:
+ *                  description: Sucessfully response
+ *                  content:
+ *                      application/json:
+ *                          schema:
+ *                              $ref: '#/components/schemas/Product'
+ *              400:
+ *                  description: Bad Request - Invalid ID or Invalid input data
+ *              404:
+ *                  description: Product Not Found
+ */
 router.put('/:id',
     validateId,
     validateUpdatedProduct,
