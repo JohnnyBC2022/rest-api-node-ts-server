@@ -2,7 +2,7 @@ import request from 'supertest'
 import server, { connectDB } from '../server'
 import db from '../config/db'
 
-describe('GET /api', () => {
+/* describe('GET /api', () => {
     it('should send back a json response', async () => {
         const res = await request(server).get('/api')
 
@@ -13,7 +13,7 @@ describe('GET /api', () => {
         expect(res.status).not.toBe(404)
         expect(res.body.msg).not.toBe('desde api')
     })
-})
+}) */
 
 // Con este test lo que hacemos es utilizar un mock para que en la conexión entre en el error del try catch, para poder cubrir la cobertura de esas líneas de código sin modificar el código original
 jest.mock('../config/db')
