@@ -5,6 +5,31 @@ import { param } from 'express-validator'
 
 const router = Router()
 
+/**
+ * @swagger
+ * components:
+ *    schemas:
+ *      Product:
+ *          type: object
+ *          properties:
+ *              id:
+ *                  type: integer
+ *                  description: The Product ID
+ *                  example: 1
+ *              name:
+ *                  type: string
+ *                  description: The Product Name
+ *                  example: Ordenador Portátil
+ *              price:
+ *                  type: number
+ *                  description: The Product price
+ *                  example: 499.95
+ *              availability:
+ *                  type: boolean
+ *                  description: The Product availability
+ *                  example: true
+ */
+
 //Routing
 router.get('/', getProducts)
 
