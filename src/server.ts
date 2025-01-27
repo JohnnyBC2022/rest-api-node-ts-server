@@ -1,6 +1,7 @@
 import express from 'express'
 import colors from 'colors' // esto sirve para mostrar los mensajes de la consola con distintos colores
 import cors, {CorsOptions} from 'cors'
+import morgan from 'morgan'
 import swaggerUi from 'swagger-ui-express'
 import swaggerSpec, {swaggerUiOptions} from './config/swagger'
 import router from './router'
@@ -37,6 +38,8 @@ server.use(cors(corsOptions))
 
 // Leer datos de formularios
 server.use(express.json())
+
+server.use(morgan('combined')) // morgan te da información a través del terminal de las peticiones. Hay distintos modos 'dev', 'combined', ...
 
 server.use("/api/v1/products", router)
 
