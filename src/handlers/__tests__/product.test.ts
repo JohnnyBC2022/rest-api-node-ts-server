@@ -57,7 +57,7 @@ describe('POST /api/v1/products', () => {
         expect(response.body).toHaveProperty('data')
 
         expect(response.status).not.toBe(404)
-        expect(response.status).not.toEqual(200) // son equivalentes, aunque toBe no usar para números decimales
+        expect(response.status).not.toEqual(200) // son equivalentes, aunque toBe mejor no usar para números decimales
         expect(response.body).not.toHaveProperty('error')
     }, 10000)
 })
