@@ -11,6 +11,6 @@ module.exports = {
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"], // Extensiones válidas
   testPathIgnorePatterns: [
     "/node_modules/", // Ignora `node_modules`
-    "/dist/" // Ignora la carpeta `dist` (si la tienes)
+    "/dist/", // Ignora la carpeta `dist` (si la tienes)
   ],
 };

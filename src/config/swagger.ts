@@ -32,7 +32,7 @@ const swaggerUiOptions: SwaggerUiOptions = {
         }
     `,
     customSiteTitle: 'Documentación REST API Express / TypeScript',
-    customfavIcon:  'https://johnnybc-portfolio.vercel.app/favicon.png'
+    customfavIcon: 'https://johnnybc-portfolio.vercel.app/favicon.png'
 }
 export default swaggerSpec
 export {

@@ -193,8 +193,8 @@ describe('PUT /api/v1/products/:id', () => {
 
 })
 
-describe('PATCH /api/v1/products/:id', ()=>{
-    it("should return a 404 response for a non-existing product",async ()=>{
+describe('PATCH /api/v1/products/:id', () => {
+    it("should return a 404 response for a non-existing product", async () => {
         const productId = 2000
         const response = await request(server).patch(`/api/v1/products/${productId}`)
 
@@ -206,7 +206,7 @@ describe('PATCH /api/v1/products/:id', ()=>{
         expect(response.body).not.toHaveProperty('data')
     })
 
-    it('should update the product availability', async()=>{
+    it('should update the product availability', async () => {
         const response = await request(server).patch('/api/v1/products/1')
         expect(response.status).toBe(200)
         expect(response.body).toHaveProperty('data')
@@ -218,17 +218,17 @@ describe('PATCH /api/v1/products/:id', ()=>{
     })
 })
 
-describe('DELETE /api/v1/products/:id', ()=>{
-    it('should check a valid ID',async ()=>{
+describe('DELETE /api/v1/products/:id', () => {
+    it('should check a valid ID', async () => {
         const response = await request(server)
-        .delete('/api/v1/products/not-valid')
+            .delete('/api/v1/products/not-valid')
 
         expect(response.status).toBe(400)
         expect(response.body).toHaveProperty('errors')
         expect(response.body.errors[0].msg).toBe('ID no válido')
     })
 
-    it('should return a 404 response for a non-existent product', async ()=>{
+    it('should return a 404 response for a non-existent product', async () => {
         const productId = 2000
         const response = await request(server).delete(`/api/v1/products/${productId}`)
 
@@ -238,7 +238,7 @@ describe('DELETE /api/v1/products/:id', ()=>{
         expect(response.status).not.toBe(200)
     })
 
-    it('should delete a product', async ()=>{
+    it('should delete a product', async () => {
         const response = await request(server).delete('/api/v1/products/1')
 
         expect(response.status).toBe(200)
